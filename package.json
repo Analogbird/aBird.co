@@ -1,0 +1,52 @@
+{
+	"name": "aBird.co",
+	"description": "Simple wrapper for the aBird.co API -The world's most awesome URL shortening service.",
+	"version": "0.2.1",
+	"main": "./lib/index.js",
+	"author": {
+		"name": "Stefan Aichholzer",
+		"email": "theaichholzer@gmail.com"
+	},
+	"contributors": [],
+	"maintainers": [],
+	"keywords": [
+		"shortening",
+		"awesome",
+		"fly",
+		"light"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:aichholzer/aBird.co.git"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"request": "^2.16.6"
+	},
+	"devDependencies": {
+		"mocha": "~1.20.1",
+		"debug": "1.0.3",
+		"should": "~4.0.4"
+	},
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"scripts": {
+		"prepublish": "npm prune",
+		"test": "mocha -R spec -t 5000",
+		"test-debug": "mocha -R spec -t 5000",
+		"test-markdown": "./node_modules/.bin/mocha -R markdown -t 5000 > Test.readme.md"
+	},
+	"bugs": {
+		"url": "https://github.com/aichholzer/aBird.co/issues"
+	},
+	"homepage": "https://github.com/aichholzer/aBird.co",
+	"_id": "abird.co@0.2.1",
+	"_from": "abird.co@^0.2.1",
+	"_npmUser": {
+		"name": "aichholzer",
+		"email": "theaichholzer@gmail.com"
+	},
+	"readme": "Please read the corresponding README.md file.",
+	"readmeFilename": "README.md"
+}
