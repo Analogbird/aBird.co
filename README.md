@@ -21,6 +21,7 @@ var abird = require('abird.co').fly(options);
 
 The `options` object may contain:
 
+* `env` - Which environment is being used; `PRO` or `DEV`. Defaults to `PRO`.
 * `apiKey` - Your API key, obtained from your [aBird.co](https://account.aBird.co) profile page. Providing an API key is only required when using the `shrink` method.
 * `timeout` - API request timeout, in milliseconds. Defaults to `3600`. 
 
