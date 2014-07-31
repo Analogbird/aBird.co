@@ -8,7 +8,7 @@ require('should');
 
 var testURL = 'https://github.com/aichholzer/aBird.co',
 	options = {
-		apiKey: '680e4bec6651c1b7682202b43761f392d633dd99',
+		apiKey: '680e...dd99',
 		timeout: 3600
 	},
 	abird = require('../lib/index').fly(options);
