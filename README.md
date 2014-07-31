@@ -3,7 +3,7 @@ aBird.co
 
 [![NPM](https://nodei.co/npm/abird.co.png)](https://nodei.co/npm/abird.co/)
 
-Simple wrapper for the aBird.co API -The world's most awesome URL shortening service. Please make sure you visit (and read) [http://developer.abird.co](http://developer.abird.co) for response specific details.
+Simple wrapper for the aBird.co API -The world's most awesome URL shortening service. Please make sure you visit (and read) [http://docs.abird.co](http://docs.abird.co) for response specific details.
 
 Using this module can't be made any easier:
 
