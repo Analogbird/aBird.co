@@ -1,6 +1,8 @@
 aBird.co
 ===============
 
+[![Build Status](https://travis-ci.org/aichholzer/aBird.co.svg)](https://travis-ci.org/aichholzer/aBird.co)
+
 [![NPM](https://nodei.co/npm/abird.co.png)](https://nodei.co/npm/abird.co/)
 
 Simple wrapper for the aBird.co API -The world's most awesome URL shortening service. Please make sure you visit (and read) [http://docs.abird.co](http://docs.abird.co) for response specific details.
