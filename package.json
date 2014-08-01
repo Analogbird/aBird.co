@@ -30,9 +30,9 @@
   },
   "scripts": {
     "prepublish": "npm prune --production",
-    "test": "mocha -R spec -t 5000",
-    "test-debug": "mocha -R spec -t 5000",
-    "test-markdown": "mocha -R markdown -t 5000 > Test.readme.md"
+    "test": "./node_modules/mocha/bin/mocha -R spec -t 5000",
+    "test-debug": "./node_modules/mocha/bin/mocha -R spec -t 5000",
+    "test-markdown": "./node_modules/mocha/bin/mocha -R markdown -t 5000 > Test.readme.md"
   },
   "bugs": {
     "url": "https://github.com/aichholzer/aBird.co/issues"
