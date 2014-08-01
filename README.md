@@ -36,7 +36,7 @@ The examples listed in this document assume that Express is being used.
 
 ```
 var url = 'https://github.com/aichholzer/aBird.co';
-abird.shrink(url, function(err, data) {
+abird.shrink(url, [mask -optional], function(err, data) {
 	if (err) {
 		return next(err);
 	}
@@ -78,6 +78,20 @@ abird.expandFromHash(hash, function(err, data) {
 	} else {
 		res.redirect(302, data.url);
 	}
+});
+```
+
+
+#### Delete a URL
+
+```
+var url = 'http://ab.je/a';
+abird.delete(url, [type -optional], function(err, statusCode) {
+	if (err) {
+		return next(err);
+	}
+
+	res.send(statusCode);
 });
 ```
 
