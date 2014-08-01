@@ -29,7 +29,6 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "prepublish": "npm prune --production",
     "test": "./node_modules/mocha/bin/mocha -R spec -t 5000",
     "test-debug": "./node_modules/mocha/bin/mocha -R spec -t 5000",
     "test-markdown": "./node_modules/mocha/bin/mocha -R markdown -t 5000 > Test.readme.md"
