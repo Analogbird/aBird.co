@@ -1,9 +1,5 @@
 'use strict';
 
-
-var log = require('debug')('abird.co'),
-    util = require('util');
-
 require('should');
 
 var testURL = 'https://github.com/aichholzer/aBird.co',
@@ -22,12 +18,10 @@ describe('aBird', function () {
 				if (err) {
 					throw err;
 				}
-				
-				log('Shrink:' + testURL);
-				log('Data: ' + util.inspect(data));
+
 				data.should.not.equal.null;
 
-				// To be used in the expanding tests.
+				// To be used in the rest of the tests.
 				testURL = data.url;
 				done();
 			});
@@ -41,24 +35,20 @@ describe('aBird', function () {
 					throw err;
 				}
 
-				log('Expand:' + testURL);
-				log('Data: ' + util.inspect(data));
 				data.should.not.equal.null;
 				done();
 			});
 		});
 	});
 
-	describe('#expandFromHash', function () {
+	describe('#expandFromMask', function () {
 		it('should return an expanded URL and size expansion', function (done) {
-			var hash = testURL.split('/').pop();
-			abird.expandFromHash(hash, function (err, data) {
+			var mask = testURL.split('/').pop();
+			abird.expandFromMask(mask, function (err, data) {
 				if (err) {
 					throw err;
 				}
 
-				log('Expand:' + hash);
-				log('Data: ' + util.inspect(data));
 				data.should.not.equal.null;
 				done();
 			});

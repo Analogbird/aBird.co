@@ -61,7 +61,7 @@ abird.expandFromURL(url, function(err, data) {
 	}
 
 	if (!data) {
-		res.send(404);
+		res.status(404).end();
 	} else {
 		res.redirect(302, data.url);
 	}
@@ -69,17 +69,17 @@ abird.expandFromURL(url, function(err, data) {
 ```
 
 
-#### Expand a hash
+#### Expand a mask
 
 ```
-var hash = 'a';
-abird.expandFromHash(hash, function(err, data) {
+var mask = 'a';
+abird.expandFromMask(mask, function(err, data) {
 	if (err) {
 		return next(err);
 	}
 
 	if (!data) {
-		res.send(404);
+		res.status(404).end();
 	} else {
 		res.redirect(302, data.url);
 	}
@@ -96,7 +96,7 @@ abird.delete(url, [type -optional], function(err, statusCode) {
 		return next(err);
 	}
 
-	res.send(statusCode);
+	res.status(statusCode).end();
 });
 ```
 
