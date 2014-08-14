@@ -10,6 +10,11 @@ aBird.co
 
 Simple wrapper for the aBird.co API -The world's most awesome URL shortening service. Please make sure you visit (and read) [http://docs.abird.co](http://docs.abird.co) for response specific details.
 
+```
+Can't wait to use this awesome API? - Here's a test key: 680e4bec6651c1b7682202b43761f392d633dd99
+Do not use this key for production apps as it might be disabled without any warnings.
+```
+
 Using this module can't be made any easier:
 
 Install aBird.co
@@ -82,6 +87,25 @@ abird.expandFromMask(mask, function(err, data) {
 		res.status(404).end();
 	} else {
 		res.redirect(302, data.url);
+	}
+});
+```
+
+#### Basic URL statistics (by mask)
+
+```
+var mask = 'a';
+abird.statsFromMask(mask, function(err, data) {
+	if (err) {
+		return next(err);
+	}
+
+	if (!data) {
+		res.render('error/404', {
+			pageTitle:'aBird.co : We fly light!'
+		});
+	} else {
+		res.send(data);
 	}
 });
 ```

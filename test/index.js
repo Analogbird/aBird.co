@@ -55,6 +55,20 @@ describe('aBird', function () {
 		});
 	});
 
+	describe('#statsFromMask', function () {
+		it('should return basic stats object', function (done) {
+			var mask = testURL.split('/').pop();
+			abird.statsFromMask(mask, function (err, data) {
+				if (err) {
+					throw err;
+				}
+
+				data.should.not.equal.null;
+				done();
+			});
+		});
+	});
+
 	describe('#softDelete', function () {
 		it('should return a 200 status code', function (done) {
 			abird.delete(testURL, 'soft', function (err, statusCode) {
