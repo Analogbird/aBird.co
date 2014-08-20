@@ -1,7 +1,7 @@
 {
   "name": "abird.co",
   "description": "Simple wrapper for the aBird.co API -The world's most awesome URL shortening service.",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "main": "./lib/index.js",
   "author": "Stefan Aichholzer <theaichholzer@gmail.com>",
   "contributors": [],
@@ -37,7 +37,7 @@
     "url": "https://github.com/aichholzer/aBird.co/issues"
   },
   "homepage": "https://github.com/aichholzer/aBird.co",
-  "_from": "abird.co@^0.2.11",
+  "_from": "abird.co@^0.2.12",
   "_npmUser": {
     "name": "aichholzer",
     "email": "theaichholzer@gmail.com"
