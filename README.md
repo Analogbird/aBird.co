@@ -12,14 +12,9 @@ aBird.co
 
 [![NPM](https://nodei.co/npm-dl/abird.co.png)](https://nodei.co/npm/abird.co/)
 
-Simple wrapper for the aBird.co API -The world's most awesome URL shortening service. Please make sure you visit (and read) [http://docs.abird.co](http://docs.abird.co) for response specific details.
+Simple wrapper for the aBird.co API -The world's most awesome content shortening service. Please make sure you visit (and read) [http://docs.abird.co](http://docs.abird.co) for response specific details.
 
-```
-Can't wait to use this awesome API? - Here's a test key: 680e4bec6651c1b7682202b43761f392d633dd99
-Do not use this key for production apps as it might be disabled without any warnings.
-```
-
-Using this module can't be made any easier:
+##### Using this module can't be made any easier:
 
 Install aBird.co
 
@@ -42,15 +37,42 @@ The `options` object may contain:
 
 And you are ready to use this awesome API.
 
+
+API
+===============
+
+- **.shrink(object, callback)**
+- **.expand(mask, callback)**
+- **.stats(mask, callback)**
+- **.delete(mask [, deleteType], callback)**
+
+In all cases the `callback` has this signature:
+
+```
+function(err, data) {
+
+}
+```
+
+
+Some examples
+===============
+
 ```
 The examples listed in this document assume that Express is being used.
 ```
 
-#### Shrink a URL
+#### Shrink content
 
 ```
-var url = 'https://github.com/aichholzer/aBird.co';
-abird.shrink(url, [mask -optional], function(err, data) {
+var content = {
+	"data": {
+		"type": "url",
+		"value": "http://abird.co"
+	}
+};
+
+abird.shrink(content, function(err, data) {
 	if (err) {
 		return next(err);
 	}
@@ -60,11 +82,11 @@ abird.shrink(url, [mask -optional], function(err, data) {
 ```
 
 
-#### Expand a URL
+#### Expand content
 
 ```
-var url = 'http://ab.je/a';
-abird.expandFromURL(url, function(err, data) {
+var mask = 'a';
+abird.expand(mask, function(err, data) {
 	if (err) {
 		return next(err);
 	}
@@ -72,42 +94,23 @@ abird.expandFromURL(url, function(err, data) {
 	if (!data) {
 		res.status(404).end();
 	} else {
-		res.redirect(302, data.url);
+		res.redirect(302, data.value);
 	}
 });
 ```
 
 
-#### Expand a mask
+#### Basic content statistics
 
 ```
 var mask = 'a';
-abird.expandFromMask(mask, function(err, data) {
+abird.stats(mask, function(err, data) {
 	if (err) {
 		return next(err);
 	}
 
 	if (!data) {
 		res.status(404).end();
-	} else {
-		res.redirect(302, data.url);
-	}
-});
-```
-
-#### Basic URL statistics (by mask)
-
-```
-var mask = 'a';
-abird.statsFromMask(mask, function(err, data) {
-	if (err) {
-		return next(err);
-	}
-
-	if (!data) {
-		res.render('error/404', {
-			pageTitle:'aBird.co : We fly light!'
-		});
 	} else {
 		res.send(data);
 	}
@@ -115,29 +118,15 @@ abird.statsFromMask(mask, function(err, data) {
 ```
 
 
-#### Delete a URL
+#### Delete content
 
 ```
-var url = 'http://ab.je/a';
-abird.delete(url, [type -optional], function(err, statusCode) {
+var mask = 'a';
+abird.delete(mask, 'soft', function(err, data) {
 	if (err) {
 		return next(err);
 	}
 
-	res.status(statusCode).end();
+	res.status(200).end();
 });
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
