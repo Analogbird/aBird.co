@@ -48,7 +48,7 @@ API
 
 In all cases the `callback` has this signature:
 
-```
+```javascript
 function(err, data) {
 
 }
@@ -64,7 +64,7 @@ The examples listed in this document assume that Express is being used.
 
 #### Shrink content
 
-```
+```javascript
 var content = {
 	"data": {
 		"type": "url",
@@ -84,7 +84,7 @@ abird.shrink(content, function(err, data) {
 
 #### Expand content
 
-```
+```javascript
 var mask = 'a';
 abird.expand(mask, function(err, data) {
 	if (err) {
@@ -102,7 +102,7 @@ abird.expand(mask, function(err, data) {
 
 #### Basic content statistics
 
-```
+```javascript
 var mask = 'a';
 abird.stats(mask, function(err, data) {
 	if (err) {
@@ -120,7 +120,7 @@ abird.stats(mask, function(err, data) {
 
 #### Delete content
 
-```
+```javascript
 var mask = 'a';
 abird.delete(mask, 'soft', function(err, data) {
 	if (err) {
