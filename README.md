@@ -12,7 +12,7 @@ aBird.co
 
 [![NPM](https://nodei.co/npm-dl/abird.co.png)](https://nodei.co/npm/abird.co/)
 
-Simple wrapper for the aBird.co API -The world's most awesome content shortening service. Please make sure you visit (and read) [http://docs.abird.co](http://docs.abird.co) for response specific details.
+Simple wrapper for the aBird.co API -The world's most awesome content shortening service. Please make sure you visit (and read) [the API documentation](http://abird.co/doc) for more specific details.
 
 ##### Using this module can't be made any easier:
 
