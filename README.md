@@ -5,8 +5,8 @@
 aBird.co
 ===============
 
-[![Build Status](https://travis-ci.org/analogbird/aBird.co.svg)](https://travis-ci.org/analogbird/aBird.co)
-[![Dependencies](https://david-dm.org/analogbird/aBird.co.png)](https://david-dm.org/analogbird/aBird.co)
+[![Build Status](https://travis-ci.org/Analogbird/aBird.co.svg)](https://travis-ci.org/Analogbird/aBird.co)
+[![Dependencies](https://david-dm.org/Analogbird/aBird.co.png)](https://david-dm.org/Analogbird/aBird.co)
 
 [![NPM](https://nodei.co/npm/abird.co.png?downloads=true&stars=true)](https://nodei.co/npm/abird.co/)
 
