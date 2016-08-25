@@ -12,9 +12,11 @@ aBird.co
 
 [![NPM](https://nodei.co/npm-dl/abird.co.png)](https://nodei.co/npm/abird.co/)
 
-Simple wrapper for the aBird.co API -The world's most awesome content shortening service. Please make sure you visit (and read) [the API documentation](http://api.abird.co/doc) for more specific details.
+```
+Simple wrapper for the aBird.co API, the world's best, coolest and fastest URL shortening service. Period.
+```
 
-##### Using this module can't be made any easier:
+##### Using this module can't be any easier:
 
 Install aBird.co
 
@@ -30,7 +32,6 @@ var abird = require('abird.co').fly(options);
 
 The `options` object may contain:
 
-* `env` - Which environment is being used; `PRO` or `DEV`. Defaults to `PRO`.
 * `apiKey` - Your API key, obtained from your [aBird.co](https://account.aBird.co) profile page. Providing an API key is only required when using the `shrink` method.
 * `timeout` - API request timeout, in milliseconds. Defaults to `3600`. 
 
@@ -41,80 +42,46 @@ And you are ready to use this awesome API.
 API
 ===============
 
-- **.shrink(object, callback)**
-- **.expand(mask, callback)**
-- **.stats(mask, callback)**
-- **.delete(mask [, deleteType], callback)**
+- **.shrink(object)**
+- **.expand(mask)**
+- **.delete(mask)**
 
-In all cases the `callback` has this signature:
-
-```javascript
-function(err, data) {
-
-}
-```
+All of these methods return a promise.
 
 
-Some examples
+Examples
 ===============
-
-```
-The examples listed in this document assume that Express is being used.
-```
 
 #### Shrink content
 
 ```javascript
-var content = {
-	"data": {
-		"type": "url",
-		"value": "http://abird.co"
-	}
+let data = {
+	type: "url",
+	value: "http://abird.co"
 };
 
-abird.shrink(content, function(err, data) {
-	if (err) {
-		return next(err);
-	}
-
-	res.send(data);
-});
+abird.shrink(data)
+    .then(result => {
+        res.send(result);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 ```
 
 
 #### Expand content
 
 ```javascript
-var mask = 'a';
-abird.expand(mask, function(err, data) {
-	if (err) {
-		return next(err);
-	}
-
-	if (!data) {
-		res.status(404).end();
-	} else {
-		res.redirect(302, data.value);
-	}
-});
-```
-
-
-#### Basic content statistics
-
-```javascript
-var mask = 'a';
-abird.stats(mask, function(err, data) {
-	if (err) {
-		return next(err);
-	}
-
-	if (!data) {
-		res.status(404).end();
-	} else {
-		res.send(data);
-	}
-});
+let mask = 'a';
+abird.expand(mask)
+    .then(result => {
+        res.redirect(302, result.value);
+    })
+    .catch(error => {
+        res.status(404).end();
+        console.error(error);
+    });
 ```
 
 
@@ -122,11 +89,12 @@ abird.stats(mask, function(err, data) {
 
 ```javascript
 var mask = 'a';
-abird.delete(mask, 'soft', function(err, data) {
-	if (err) {
-		return next(err);
-	}
-
-	res.status(200).end();
-});
+abird.delete(mask)
+    .then(() => {
+        res.status(200).end();
+    })
+    .catch(error => {
+        res.status(400).end();
+        console.error(error);
+    });
 ```
