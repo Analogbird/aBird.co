@@ -10,7 +10,11 @@ let options = {
     testMask,
     duplicateMask;
 
-bird.url = 'http://localhost:9090/';
+if (process.env.URL !== 'API') {
+    bird.url = 'http://localhost:9090/';
+}
+
+console.log(process.env.URL);
 describe('Tests:', () => {
 
 	describe('- Shrink', () => {
