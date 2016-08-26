@@ -1,55 +1,55 @@
 {
-  "name": "abird.co",
-  "description": "A wrapper for the aBird.co API, the world's most awesome content shortening service. Period.",
-  "version": "0.3.0",
-  "main": "./lib/index.js",
-  "author": "Stefan Aichholzer <theaichholzer@gmail.com>",
-  "contributors": [],
-  "maintainers": [],
-  "keywords": [
-    "shortening",
-    "awesome",
-    "fly",
-    "light",
-    "shortener",
-    "url"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Analogbird/aBird.co.module.git"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "request": "^2.74.0",
-    "underscore": "^1.8.3"
-  },
-  "devDependencies": {
-    "debug": "^2.2.0",
-    "dotenv": "^2.0.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-jscs": "^3.0.1",
-    "mocha": "^3.0.2",
-    "should": "^11.1.0"
-  },
-  "engines": {
-    "node": ">= 6.2.0"
-  },
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha -R spec -t 5000",
-    "test-debug": "./node_modules/mocha/bin/mocha -R spec -t 5000",
-    "test-markdown": "./node_modules/mocha/bin/mocha -R markdown -t 5000 > Test.readme.md"
-  },
-  "bugs": {
-    "url": "https://github.com/aichholzer/aBird.co/issues"
-  },
-  "homepage": "https://github.com/Analogbird/aBird.co.module",
-  "_from": "abird.co@^0.2.18",
-  "_npmUser": {
-    "name": "aichholzer",
-    "email": "theaichholzer@gmail.com"
-  },
-  "directories": {
-    "test": "test"
-  }
+    "name": "abird.co",
+    "description": "A wrapper for the aBird.co API, the world's most awesome content shortening service. Period.",
+    "version": "0.3.0",
+    "main": "./lib/index.js",
+    "author": "Stefan Aichholzer <theaichholzer@gmail.com>",
+    "contributors": [],
+    "maintainers": [],
+    "keywords": [
+        "shortening",
+        "awesome",
+        "fly",
+        "light",
+        "shortener",
+        "url"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Analogbird/aBird.co.module.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "request": "^2.74.0",
+        "underscore": "^1.8.3"
+    },
+    "devDependencies": {
+        "debug": "^2.2.0",
+        "dotenv": "^2.0.0",
+        "grunt": "^1.0.1",
+        "grunt-contrib-jshint": "^1.0.0",
+        "grunt-jscs": "^3.0.1",
+        "mocha": "^3.0.2",
+        "should": "^11.1.0"
+    },
+    "engines": {
+        "node": ">= 6.2.0"
+    },
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha -R spec -t 5000",
+        "test-debug": "./node_modules/mocha/bin/mocha -R spec -t 5000",
+        "test-markdown": "./node_modules/mocha/bin/mocha -R markdown -t 5000 > Test.readme.md"
+    },
+    "bugs": {
+        "url": "https://github.com/aichholzer/aBird.co/issues"
+    },
+    "homepage": "https://github.com/Analogbird/aBird.co.module",
+    "_from": "abird.co@^0.2.18",
+    "_npmUser": {
+        "name": "aichholzer",
+        "email": "theaichholzer@gmail.com"
+    },
+    "directories": {
+        "test": "test"
+    }
 }
